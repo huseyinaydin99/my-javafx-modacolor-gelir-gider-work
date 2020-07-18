@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="678.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.modacolor.SampleController">
+   <children>
+      <TabPane prefHeight="549.0" prefWidth="802.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Gelir Girişi ve Gelir Takibi">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Gelir ID :" />
+                        <TextField fx:id="gelirIDText" disable="true" layoutX="144.0" layoutY="9.0" />
+                        <Label layoutX="14.0" layoutY="51.0" text="Gelir Miktarı : " />
+                        <TextField fx:id="gelirMiktarText" layoutX="144.0" layoutY="46.0" />
+                        <Label layoutX="14.0" layoutY="86.0" text="Gelir Açıklaması : " />
+                        <TextField fx:id="gelirAciklamaText" layoutX="144.0" layoutY="81.0" />
+                        <Label layoutX="338.0" layoutY="51.0" text="TL" />
+                        <Label layoutX="14.0" layoutY="119.0" text="Gelir Tarihi : " />
+                        <Label fx:id="gelirTarihLabel" layoutX="144.0" layoutY="119.0" text="Tarih : " />
+                        <Button fx:id="gelirKaydet" layoutX="388.0" layoutY="9.0" mnemonicParsing="false" onAction="#gelirKaydet" text="Kaydet" />
+                        <Button fx:id="gelirGuncelle" layoutX="463.0" layoutY="9.0" mnemonicParsing="false" onAction="#gelirGuncelle" text="Güncelle" />
+                        <Button fx:id="gelirSil" layoutX="550.0" layoutY="9.0" mnemonicParsing="false" onAction="#gelirSil" text="Sil" />
+                        <Button fx:id="gelirIlk" layoutX="389.0" layoutY="46.0" mnemonicParsing="false" onAction="#ilkeGit" text="&lt;&lt; İlk" />
+                        <Button fx:id="gelirGeri" layoutX="463.0" layoutY="46.0" mnemonicParsing="false" onAction="#geriGit" text="&lt; Geri" />
+                        <Button fx:id="gelirIleri" layoutX="539.0" layoutY="46.0" mnemonicParsing="false" onAction="#ileriGit" text="İleri &gt;" />
+                        <Button fx:id="gelirSon" layoutX="608.0" layoutY="46.0" mnemonicParsing="false" onAction="#sonaGit" text="Son &gt;&gt;" />
+                        <Label layoutX="388.0" layoutY="86.0" text="Gelir ID : " />
+                        <TextField fx:id="araId" layoutX="456.0" layoutY="81.0" prefHeight="31.0" prefWidth="123.0" />
+                        <Button fx:id="gelirAra" layoutX="586.0" layoutY="81.0" mnemonicParsing="false" onAction="#gelirAra" text="Ara" />
+                        <TableView fx:id="gelirTableView" layoutX="14.0" layoutY="150.0" prefHeight="480.0" prefWidth="741.0" />
+                        <Button fx:id="gelirTemizle" layoutX="597.0" layoutY="9.0" mnemonicParsing="false" onAction="#alaniTemizle" text="Temizle" />
+                        <Label layoutX="389.0" layoutY="119.0" text="Bugünün toplam geliri : " />
+                        <Label fx:id="gunTopGelir" layoutX="562.0" layoutY="119.0" prefHeight="21.0" prefWidth="136.0" text="-" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gider Girişi ve Gider Takibi">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Gider ID : " />
+                        <TextField fx:id="giderIDText" disable="true" layoutX="144.0" layoutY="9.0" />
+                        <Label layoutX="14.0" layoutY="49.0" text="Gider Miktarı : " />
+                        <TextField fx:id="giderMiktarText" layoutX="144.0" layoutY="44.0" />
+                        <Label layoutX="14.0" layoutY="83.0" text="Gider Açıklaması : " />
+                        <TextField fx:id="giderAciklamaText" layoutX="144.0" layoutY="78.0" />
+                        <Label layoutX="14.0" layoutY="118.0" text="Gider Tarihi : " />
+                        <Label fx:id="giderTarihLabel" layoutX="144.0" layoutY="120.0" text="Tarih : " />
+                        <Label layoutX="338.0" layoutY="48.0" text="TL" />
+                        <Button fx:id="giderKaydet" layoutX="390.0" layoutY="9.0" mnemonicParsing="false" onAction="#giderKaydet" text="Kaydet" />
+                        <Button fx:id="giderGuncelle" layoutX="466.0" layoutY="9.0" mnemonicParsing="false" onAction="#giderGuncelle" text="Güncelle" />
+                        <Button fx:id="giderSil" layoutX="552.0" layoutY="9.0" mnemonicParsing="false" onAction="#giderSil" text="Sil" />
+                        <Button fx:id="giderTemizle" layoutX="596.0" layoutY="9.0" mnemonicParsing="false" onAction="#alaniTemizle2" text="Temizle" />
+                        <Button fx:id="giderIlk" layoutX="390.0" layoutY="45.0" mnemonicParsing="false" onAction="#ilkeGit2" text="&lt;&lt; İlk" />
+                        <Button fx:id="giderGeri" layoutX="458.0" layoutY="45.0" mnemonicParsing="false" onAction="#geriGit2" text="&lt; Geri" />
+                        <Button fx:id="giderIleri" layoutX="526.0" layoutY="45.0" mnemonicParsing="false" onAction="#ileriGit2" text="İleri &gt;" />
+                        <Button fx:id="giderSon" layoutX="592.0" layoutY="45.0" mnemonicParsing="false" onAction="#sonaGit2" text="Son &gt;&gt;" />
+                        <Label layoutX="390.0" layoutY="85.0" text="Gider ID : " />
+                        <TextField fx:id="araId2" layoutX="466.0" layoutY="80.0" prefHeight="31.0" prefWidth="117.0" />
+                        <Button fx:id="gelirAra2" layoutX="591.0" layoutY="80.0" mnemonicParsing="false" onAction="#gelirAra2" text="Ara" />
+                        <TableView fx:id="giderTableView" layoutX="14.0" layoutY="147.0" prefHeight="478.0" prefWidth="736.0" />
+                        <Label layoutX="390.0" layoutY="118.0" text="Bugünün toplam gideri : " />
+                        <Label fx:id="gunTopGider" layoutX="566.0" layoutY="118.0" prefHeight="21.0" prefWidth="142.0" text="-" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Aylık Gider/Gelir Hesaplama">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="27.0" layoutY="23.0" text="Ay Seçiniz : " />
+                        <Button layoutX="212.0" layoutY="18.0" mnemonicParsing="false" onAction="#aylikHesapla" prefHeight="65.0" prefWidth="79.0" text="Hesapla" />
+                        <Label layoutX="26.0" layoutY="124.0" text="Aylık gelir toplam : " />
+                        <TextField fx:id="gelirToplam" disable="true" layoutX="168.0" layoutY="119.0" prefHeight="31.0" prefWidth="128.0" />
+                        <Label layoutX="25.0" layoutY="155.0" text="Aylık gider toplam : " />
+                        <TextField fx:id="giderToplam" disable="true" layoutX="169.0" layoutY="150.0" prefHeight="31.0" prefWidth="128.0" />
+                        <ComboBox fx:id="aylar" layoutX="108.0" layoutY="18.0" prefHeight="31.0" prefWidth="96.0" promptText="Aylar" />
+                        <Label layoutX="304.0" layoutY="124.0" text="TL" />
+                        <Label layoutX="305.0" layoutY="155.0" text="TL" />
+                        <Label layoutX="27.0" layoutY="57.0" text="Yıl Seçiniz : " />
+                        <ComboBox fx:id="yillar" layoutX="108.0" layoutY="52.0" prefHeight="31.0" prefWidth="96.0" promptText="Yıllar" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Program Hakkında">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="29.0" text="Bu program Nigde Moda Color icin yapilmistir. Kopyalanmasi yasaktir!" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

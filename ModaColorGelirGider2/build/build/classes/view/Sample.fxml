@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="535.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tacirogluapt.SampleController">
+   <children>
+      <TabPane prefHeight="549.0" prefWidth="802.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Gelir Girişi ve Gelir Takibi">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="33.0" text="Daire No : " />
+                        <TextField fx:id="ggDaireNo" layoutX="110.0" layoutY="29.0" text="0" />
+                        <TextField fx:id="ggTCNo" layoutX="110.0" layoutY="54.0" text="0" />
+                        <Label layoutX="14.0" layoutY="58.0" text="TC No : " />
+                        <TextField fx:id="ggAdi" layoutX="110.0" layoutY="79.0" />
+                        <Label layoutX="14.0" layoutY="83.0" text="Adı : " />
+                        <TextField fx:id="ggSoyadi" layoutX="110.0" layoutY="104.0" />
+                        <Label layoutX="14.0" layoutY="108.0" text="Soyadı : " />
+                        <Label layoutX="13.0" layoutY="133.0" text="Ödenen Miktar : " />
+                        <TextField fx:id="ggOdemeMiktari" layoutX="110.0" layoutY="129.0" text="0" />
+                        <Label layoutX="14.0" layoutY="158.0" text="Ödeme Tarihi" />
+                        <DatePicker fx:id="ggOdemeTarihi" layoutX="110.0" layoutY="154.0" />
+                        <Label layoutX="262.0" layoutY="133.0" text="₺" />
+                        <TableView fx:id="ggTableView" layoutX="13.0" layoutY="189.0" prefHeight="231.0" prefWidth="697.0" />
+                        <VBox layoutX="284.0" layoutY="24.0" prefHeight="80.0" prefWidth="483.0">
+                           <children>
+                              <HBox prefHeight="28.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="ggKaydet" mnemonicParsing="false" onAction="#kayitEt" prefHeight="30.0" prefWidth="65.0" text="Kaydet">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                    <Button fx:id="ggGuncelle" mnemonicParsing="false" onAction="#gGuncelle" prefHeight="25.0" prefWidth="83.0" text="Güncelle">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                    <Button fx:id="ggSil" mnemonicParsing="false" onAction="#gSil" prefHeight="30.0" prefWidth="65.0" text="Sil">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="38.0" prefWidth="100.0">
+                                 <children>
+                                    <Button fx:id="ggIlk" mnemonicParsing="false" onAction="#ilkeGit" prefHeight="25.0" prefWidth="65.0" text="İlk">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                    <Button fx:id="ggGeri" mnemonicParsing="false" onAction="#geriGit" prefHeight="25.0" prefWidth="65.0" text="&lt; Geri">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                    <Button fx:id="ggIleri" mnemonicParsing="false" onAction="#ileriGit" prefHeight="25.0" prefWidth="65.0" text="İleri &gt;">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                    <Button fx:id="ggSon" mnemonicParsing="false" onAction="#sonaGit" prefHeight="25.0" prefWidth="65.0" text="Son">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Daire No:">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="ggAraT" promptText="Ara" />
+                                    <Button fx:id="ggAraB" mnemonicParsing="false" onAction="#gAra" prefHeight="25.0" prefWidth="70.0" text="Ara">
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding></Button>
+                                    <Button fx:id="ggAraIptal" mnemonicParsing="false" onAction="#gAraIptal" prefHeight="25.0" prefWidth="77.0" text="Ara İptal" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gider Girişi ve Gider Takibi">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="47.0" text="Gider Adı : " />
+                        <TextField fx:id="giAdi" layoutX="108.0" layoutY="43.0" />
+                        <TextField fx:id="giMiktar" layoutX="108.0" layoutY="75.0" />
+                        <Label layoutX="14.0" layoutY="79.0" text="Gider Miktarı : " />
+                        <Label layoutX="14.0" layoutY="110.0" text="Gider Tarihi : " />
+                        <DatePicker fx:id="giTar" layoutX="108.0" layoutY="106.0" />
+                        <Label layoutX="14.0" layoutY="143.0" text="Gider Açıklama : " />
+                        <TextArea fx:id="giAciklama" layoutX="108.0" layoutY="143.0" prefHeight="98.0" prefWidth="200.0" />
+                        <Label layoutX="259.0" layoutY="79.0" text="₺" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Toplam Gelir : " />
+                        <TextField fx:id="giToplamGelir" disable="true" layoutX="108.0" layoutY="10.0" />
+                        <TableView fx:id="giTableView" layoutX="14.0" layoutY="260.0" prefHeight="211.0" prefWidth="507.0" />
+                        <Label layoutX="260.0" layoutY="17.0" text="₺" />
+                        <VBox layoutX="319.0" layoutY="34.0" prefHeight="83.0" prefWidth="284.0">
+                           <children>
+                              <HBox prefHeight="42.0" prefWidth="194.0">
+                                 <children>
+                                    <Button fx:id="giKaydet" mnemonicParsing="false" onAction="#giKayitEt" prefHeight="25.0" prefWidth="69.0" text="Kaydet" />
+                                    <Button fx:id="giGuncelle" mnemonicParsing="false" onAction="#giGuncellee" prefHeight="25.0" prefWidth="85.0" text="Güncelle" />
+                                    <Button fx:id="giSil" mnemonicParsing="false" onAction="#giSill" prefHeight="25.0" prefWidth="69.0" text="Sil" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="giIlk" mnemonicParsing="false" onAction="#giIlkk" prefHeight="25.0" prefWidth="69.0" text="İlk" />
+                                    <Button fx:id="giGeri" mnemonicParsing="false" onAction="#giGerii" prefHeight="25.0" prefWidth="69.0" text="&lt; Geri" />
+                                    <Button fx:id="giIleri" mnemonicParsing="false" onAction="#giIlerii" prefHeight="25.0" prefWidth="69.0" text="İleri &gt;" />
+                                    <Button fx:id="giSon" mnemonicParsing="false" onAction="#giSonn" prefHeight="25.0" prefWidth="69.0" text="Son" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Borç Dökümü">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="bbTableView" layoutX="8.0" layoutY="98.0" prefHeight="342.0" prefWidth="474.0" />
+                        <ComboBox fx:id="bbCombo1" layoutX="8.0" layoutY="53.0" prefWidth="150.0" promptText="Yıl Seçiniz" />
+                        <Button fx:id="bbHesapla" layoutX="168.0" layoutY="53.0" mnemonicParsing="false" onAction="#bHesapla" prefHeight="25.0" prefWidth="85.0" text="Hesapla" />
+                        <LineChart fx:id="bbLineChart" layoutX="484.0" layoutY="103.0" prefHeight="335.0" prefWidth="310.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label layoutX="14.0" layoutY="18.0" text="Yıllık miktar : " />
+                        <TextField fx:id="bbMiktar" layoutX="90.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label layoutX="245.0" layoutY="18.0" text="₺" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Program Hakkında">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="38.0" text="Bu program Hüseyin Aydın tarafından yazılmıştır." />
+                        <Label layoutX="278.0" layoutY="38.0" text="Facebook : https://www.facebook.com/beyaz.sapkali.5" />
+                        <ImageView fx:id="javaimage" fitHeight="150.0" fitWidth="150.0" layoutX="7.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/java.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="javafximage" fitHeight="150.0" fitWidth="150.0" layoutX="157.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/javafx.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="springimage" fitHeight="72.0" fitWidth="278.0" layoutX="26.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/spring.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hibernateimage" fitHeight="79.0" fitWidth="283.0" layoutX="18.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/Hibernate.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="574.0" layoutY="38.0" text="Gmail : huseyinaydin99@gmail.com" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

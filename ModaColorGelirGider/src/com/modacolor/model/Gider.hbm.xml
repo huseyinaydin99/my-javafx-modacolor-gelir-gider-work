@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.modacolor.model.Gider" table="gider"
+		catalog="modacolor">
+		<id name="giderID" type="java.lang.Long">
+			<column name="gider_id" />
+			<generator class="identity" />
+		</id>
+		
+		<property name="giderMiktar" type="java.lang.Double">
+			<column name="gider_miktar" not-null="true" />
+		</property>
+		
+		<property name="giderAciklama" type="string">
+			<column name="gider_aciklama" not-null="false" />
+		</property>
+		
+		<property name="giderTarih" type="date">
+			<column name="gider_tarih" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

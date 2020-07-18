@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="ModaColorGelirGider" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<target name="init-fx-tasks">
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home}\..\lib\ant-javafx.jar"/>
+				<file name="${java.home}\lib\jfxrt.jar"/>
+			</filelist>
+		</path>
+	
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+			uri="javafx:com.sun.javafx.tools.ant"
+			classpathref="fxant"/>
+	</target>
+	<target name="setup-staging-area">
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+	
+		<mkdir dir="externalLibs" />
+	
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\hibernate\hibernate-entitymanager\5.0.6.Final">
+				<filename name="hibernate-entitymanager-5.0.6.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\javassist\javassist\3.18.1-GA">
+				<filename name="javassist-3.18.1-GA.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final">
+				<filename name="hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-context\4.2.0.RELEASE">
+				<filename name="spring-context-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-core\4.2.0.RELEASE">
+				<filename name="spring-core-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final">
+				<filename name="hibernate-commons-annotations-5.0.1.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\aopalliance\aopalliance\1.0">
+				<filename name="aopalliance-1.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\mysql\mysql-connector-java\5.1.36">
+				<filename name="mysql-connector-java-5.1.36.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\javax\transaction\jta\1.1">
+				<filename name="jta-1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\xml-apis\xml-apis\1.0.b2">
+				<filename name="xml-apis-1.0.b2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-orm\4.2.0.RELEASE">
+				<filename name="spring-orm-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\jboss\logging\jboss-logging\3.3.0.Final">
+				<filename name="jboss-logging-3.3.0.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\hibernate\hibernate-core\5.0.6.Final">
+				<filename name="hibernate-core-5.0.6.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-jdbc\4.2.0.RELEASE">
+				<filename name="spring-jdbc-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-aop\4.2.0.RELEASE">
+				<filename name="spring-aop-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\dom4j\dom4j\1.6.1">
+				<filename name="dom4j-1.6.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-tx\4.2.0.RELEASE">
+				<filename name="spring-tx-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-beans\4.2.0.RELEASE">
+				<filename name="spring-beans-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\commons-logging\commons-logging\1.2">
+				<filename name="commons-logging-1.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\antlr\antlr\2.7.7">
+				<filename name="antlr-2.7.7.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\jboss\jandex\2.0.0.Final">
+				<filename name="jandex-2.0.0.Final.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Hüseyin\.m2\repository\org\springframework\spring-expression\4.2.0.RELEASE">
+				<filename name="spring-expression-4.2.0.RELEASE.jar"/>
+			</fileset>
+		</copy>
+	
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="C:\Users\Hüseyin\Documents\workspace-sts-3.9.4.RELEASE\ModaColorGelirGider">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+	
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<delete dir="build" />
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+	
+		<!-- Copy project-libs references -->
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="xml-apis-1.0.b2.jar"/>
+				<include name="hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+				<include name="hibernate-core-5.0.6.Final.jar"/>
+				<include name="spring-orm-4.2.0.RELEASE.jar"/>
+				<include name="jboss-logging-3.3.0.Final.jar"/>
+				<include name="spring-core-4.2.0.RELEASE.jar"/>
+				<include name="javassist-3.18.1-GA.jar"/>
+				<include name="hibernate-entitymanager-5.0.6.Final.jar"/>
+				<include name="aopalliance-1.0.jar"/>
+				<include name="jandex-2.0.0.Final.jar"/>
+				<include name="spring-aop-4.2.0.RELEASE.jar"/>
+				<include name="commons-logging-1.2.jar"/>
+				<include name="spring-expression-4.2.0.RELEASE.jar"/>
+				<include name="spring-context-4.2.0.RELEASE.jar"/>
+				<include name="spring-jdbc-4.2.0.RELEASE.jar"/>
+				<include name="dom4j-1.6.1.jar"/>
+				<include name="mysql-connector-java-5.1.36.jar"/>
+				<include name="spring-tx-4.2.0.RELEASE.jar"/>
+				<include name="spring-beans-4.2.0.RELEASE.jar"/>
+				<include name="antlr-2.7.7.jar"/>
+				<include name="hibernate-commons-annotations-5.0.1.Final.jar"/>
+				<include name="jta-1.1.jar"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy project references -->
+	
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/src">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	
+		<javac includeantruntime="false" source="1.8" target="1.8" srcdir="build/src" destdir="build/classes" encoding="Cp1254">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*"/>
+				</fileset>
+			</classpath>
+		</javac>
+	
+		<!-- Copy over none Java-Files -->
+		<copy todir="build/classes">
+		<fileset dir="project/src">
+			<exclude name="**/*.java"/>
+		</fileset>
+		</copy>
+	
+	
+	</target>
+	<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
+		<delete file="dist"/>
+		<delete file="deploy" />
+	
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+	
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+	
+	
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" includes="ModaColorGelirGider.jar"/>
+			<fx:fileset dir="dist" includes="libs/*"/>
+		</fx:resources>
+	
+		<fx:application id="fxApplication"
+			name=""
+			mainClass="com.modacolor.Main"
+			toolkit="fx"
+		/>
+	
+		<mkdir dir="build/classes/META-INF" />
+	
+	
+	
+		<fx:jar destfile="dist/ModaColorGelirGider.jar">
+			<fx:application refid="fxApplication"/>
+			<fileset dir="build/classes">
+			</fileset>
+			<fx:resources refid="appRes"/>
+	
+			<manifest>
+				<attribute name="Implementation-Vendor" value="Huseyin Aydin"/>
+				<attribute name="Implementation-Title" value=""/>
+				<attribute name="Implementation-Version" value="1.0"/>
+				<attribute name="JavaFX-Feature-Proxy" value="None"/>
+			</manifest>
+		</fx:jar>
+	
+	
+		<mkdir dir="deploy" />
+		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+		<fx:deploy
+			embedJNLP="false"
+			extension="false"
+			includeDT="false"
+			offlineAllowed="true"
+			outdir="${basedir}/deploy"
+			outfile="ModaColorGelirGider" nativeBundles="none"
+			updatemode="background" >
+	
+			<fx:platform basedir="${java.home}"/>
+			<fx:info title="ModaColorGelirGider" vendor="Huseyin Aydin"/>
+	
+			<fx:application refId="fxApplication"/>
+			<fx:resources refid="appRes"/>
+		</fx:deploy>
+	
+	
+	</target>
+</project>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="tacirogluapt.model.Daire" table="gelir"
+		catalog="tacirogluapt">
+		<id name="daireId" type="java.lang.Long">
+			<column name="daire_id" />
+			<generator class="identity" />
+		</id>
+		
+		<property name="daireNo" type="java.lang.Long">
+			<column name="daire_No" not-null="true" />
+		</property>
+		
+		<property name="tcNo" type="java.lang.Long">
+			<column name="tc_No" not-null="false" />
+		</property>
+
+		<property name="ad" type="string">
+			<column name="sakinAd" length="50" not-null="true" />
+		</property>
+		<property name="soyad" type="string">
+			<column name="sakinSoyad" length="50" not-null="true" />
+		</property>
+		
+		<property name="odenenMiktar" type="java.lang.Long">
+			<column name="odenenMiktar" not-null="true" />
+		</property>
+		
+		<property name="odemeTarihi" type="date">
+			<column name="odemeTarihi" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>
